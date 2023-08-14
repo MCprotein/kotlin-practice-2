@@ -1,13 +1,9 @@
 fun main(args: Array<String>) {
-    val price: Int = 100
+    val price1 = 100
+    val price2 = 200
 
-    when(price) {
-        100 -> println("1. price = $price")
-        200 -> println("2. price = $price")
-        300 -> {
-            println("3. price = $price")
-        }
-
-        else -> println("4. Not")
-    }
+    val price3 = sumPrice(price1, price2)
+    println("price3 = $price3")
 }
+
+fun sumPrice(price1: Int, price2: Int): Int = price1 + price2
