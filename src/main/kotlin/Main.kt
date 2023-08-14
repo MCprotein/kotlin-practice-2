@@ -1,9 +1,25 @@
 fun main(args: Array<String>) {
-    val price1 = 100
-    val price2 = 200
+    val item = Item("Book", 10_000)
+    println("Item name is ${item.name}, price is ${item.price}")
 
-    val price3 = sumPrice(price1, price2)
-    println("price3 = $price3")
+    item.buy()
+    item.sell()
 }
 
-fun sumPrice(price1: Int, price2: Int): Int = price1 + price2
+class Item(
+    val name: String,
+    val price: Int
+) : ItemTrade {
+    override fun buy() {
+        println("[buy] $name")
+    }
+
+    override fun sell() {
+        println("[sell] $name")
+    }
+}
+
+interface ItemTrade {
+    fun buy()
+    fun sell()
+}
